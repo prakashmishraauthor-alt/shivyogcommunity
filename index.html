@@ -10,7 +10,7 @@
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
 /* =========================================================
-   SHIVYOG COMMUNITY — VERSION 1
+   SHIVYOG COMMUNITY — VERSION 2
    Elegant editorial / spiritual community foundation
    ========================================================= */
 
@@ -371,6 +371,42 @@ h3 {
   bottom: 30px;
   z-index: 3;
   color: rgba(255,255,255,.7);
+}
+
+
+/* MINIMAL HERO — ShivYog Community */
+.hero-content-minimal {
+  position: relative;
+  z-index: 2;
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 110px 24px 150px;
+  text-align: center;
+}
+.hero-content-minimal h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(64px, 9vw, 126px);
+  line-height: .9;
+  font-weight: 600;
+  letter-spacing: -.035em;
+  color: #fffaf0;
+  text-shadow: 0 4px 28px rgba(0,0,0,.55);
+}
+.hero-tagline {
+  margin: 30px 0 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: #f1d18c;
+  text-shadow: 0 3px 18px rgba(0,0,0,.65);
+}
+@media (max-width: 700px) {
+  .hero-content-minimal { padding: 130px 20px 170px; }
+  .hero-content-minimal h1 { font-size: clamp(52px, 15vw, 82px); }
+  .hero-tagline { font-size: 17px; }
 }
 
 /* INTRO */
@@ -1234,12 +1270,6 @@ h3 {
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="ShivYog Community home">
-        <span class="brand-text">
-          <strong>ShivYog</strong>
-          <small>COMMUNITY</small>
-        </span>
-      </a>
 
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#wisdom">Wisdom</a>
@@ -1269,30 +1299,10 @@ h3 {
            alt="A vast ShivYog meditation gathering beneath a radiant spiritual vision"
            fetchpriority="high">
       <div class="hero-vignette"></div>
-
-      <div class="container hero-content">
-        <p class="eyebrow">SHIVYOG COMMUNITY</p>
-        <h1>Awakening consciousness.<br><em>Inspiring compassion.</em><br>Serving humanity.</h1>
-        <p class="hero-lead">
-          A living window into wisdom, community and Sewa
-          across the ShivYog world.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-light" href="#community">Explore the Community</a>
-          <a class="text-link light-link" href="https://www.shivyogportal.com/forums" target="_blank" rel="noopener">
-            Find Your Forum <span>↗</span>
-          </a>
-        </div>
+      <div class="hero-content hero-content-minimal">
+        <h1>ShivYog Community</h1>
+        <p class="hero-tagline">Walking the path shown by the Masters</p>
       </div>
-
-      <div class="hero-pillars">
-        <a href="#wisdom"><span>01</span><strong>WISDOM</strong><small>Timeless Teachings</small></a>
-        <a href="#community"><span>02</span><strong>COMMUNITY</strong><small>Global Family</small></a>
-        <a href="#sewa"><span>03</span><strong>SEWA</strong><small>Selfless Service</small></a>
-        <a href="#world"><span>04</span><strong>WORLD</strong><small>One Humanity</small></a>
-      </div>
-
-      <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
     </section>
 
     <!-- INTRO -->
@@ -1622,9 +1632,6 @@ h3 {
   <footer class="site-footer">
     <div class="container footer-top">
       <div>
-        <a class="brand footer-brand" href="index.html">
-            <span class="brand-text"><strong>ShivYog</strong><small>COMMUNITY</small></span>
-        </a>
         <p class="footer-note">
           An independent community initiative created to celebrate wisdom,
           community and Sewa inspired by ShivYog.
