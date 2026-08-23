@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ShivYog Community — Wisdom · Community · Sewa</title>
+  <title>ShivYog Community — Wisdom · Community · Sewa | Global Community</title>
   <meta name="description" content="ShivYog Community — a living window into wisdom, community and Sewa inspired by ShivYog around the world.">
   <meta name="theme-color" content="#11110f">
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
 /* =========================================================
-   SHIVYOG COMMUNITY — VERSION 2
+   SHIVYOG COMMUNITY — VERSION 3
    Elegant editorial / spiritual community foundation
    ========================================================= */
 
@@ -643,101 +643,266 @@ h3 {
   justify-content: flex-end;
 }
 
-/* WORLD */
+/* WORLD V3 — GLOBAL COMMUNITY CONSTELLATION */
 
-.world {
-  overflow: hidden;
-}
+.world-v3 { overflow: hidden; }
+.world-v3 .section-heading { max-width: 760px; margin-bottom: 48px; }
+.world-v3 .section-heading h2 { max-width: 700px; }
 
-.world .section-heading {
-  margin-bottom: 45px;
-}
-
-.world-map {
-  height: 480px;
+.global-stage {
   position: relative;
-  overflow: hidden;
+  min-height: 520px;
   border: 1px solid var(--line-dark);
   background:
-    radial-gradient(circle at 49% 48%, rgba(201,154,74,.11), transparent 18%),
-    #171613;
+    radial-gradient(circle at 50% 48%, rgba(201,154,74,.13), transparent 23%),
+    radial-gradient(circle at 15% 55%, rgba(76,105,145,.09), transparent 24%),
+    #141615;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.map-grid {
+.global-stage::before {
+  content: "GLOBAL COMMUNITY";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: var(--serif);
+  font-size: clamp(70px, 12vw, 170px);
+  letter-spacing: -.045em;
+  color: rgba(255,255,255,.025);
+}
+
+.global-stage::after {
+  content: "";
   position: absolute;
   inset: 0;
-  opacity: .22;
   background-image:
-    linear-gradient(var(--line-dark) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  pointer-events: none;
 }
 
-.map-center {
+.constellation-lines {
   position: absolute;
-  left: 50%;
-  top: 49%;
-  transform: translate(-50%, -50%);
-  font-family: var(--serif);
-  font-size: 90px;
-  color: rgba(223,189,125,.25);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .38;
+  pointer-events: none;
 }
 
-.map-glow {
+.constellation-lines path {
+  fill: none;
+  stroke: rgba(223,189,125,.32);
+  stroke-width: 1;
+  stroke-dasharray: 5 8;
+}
+
+.node {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  border: 0;
   border-radius: 50%;
-  background: var(--gold-soft);
-  box-shadow: 0 0 0 7px rgba(223,189,125,.09), 0 0 35px 8px rgba(223,189,125,.35);
+  padding: 0;
+  background: #e2b867;
+  box-shadow: 0 0 0 7px rgba(226,184,103,.08), 0 0 30px 8px rgba(226,184,103,.28);
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
-.glow-one { left: 63%; top: 52%; }
-.glow-two { left: 51%; top: 38%; }
-.glow-three { left: 28%; top: 37%; }
-.glow-four { left: 77%; top: 40%; }
-.glow-five { left: 72%; top: 70%; }
+.node:hover,
+.node.active {
+  transform: scale(1.45);
+  box-shadow: 0 0 0 9px rgba(226,184,103,.12), 0 0 42px 12px rgba(226,184,103,.42);
+}
 
-.map-label {
+.node-label {
   position: absolute;
-  color: rgba(255,255,255,.36);
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  color: rgba(255,255,255,.72);
   font-size: 9px;
-  letter-spacing: .18em;
+  line-height: 1.2;
+  letter-spacing: .17em;
   font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  text-align: center;
 }
 
-.label-one { left: 57%; top: 57%; }
-.label-two { left: 48%; top: 31%; }
-.label-three { left: 23%; top: 30%; }
-.label-four { left: 69%; top: 77%; }
+.n-na { left: 19%; top: 38%; }
+.n-eu { left: 48%; top: 29%; }
+.n-africa { left: 47%; top: 55%; }
+.n-sa { left: 30%; top: 70%; }
+.n-india { left: 61%; top: 55%; }
+.n-sea { left: 70%; top: 50%; }
+.n-aus { left: 79%; top: 70%; }
+.n-nz { left: 86%; top: 78%; }
+.n-kenya { left: 52%; top: 61%; }
 
-.world-bottom {
+.l-na { left: 19%; top: 32%; }
+.l-eu { left: 48%; top: 23%; }
+.l-africa { left: 47%; top: 61%; }
+.l-sa { left: 30%; top: 76%; }
+.l-india { left: 61%; top: 49%; }
+.l-sea { left: 70%; top: 44%; }
+.l-aus { left: 79%; top: 76%; }
+.l-nz { left: 86%; top: 84%; }
+.l-kenya { left: 52%; top: 67%; }
+
+.global-focus {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(300px, 42vw);
+  text-align: center;
+  pointer-events: none;
+}
+
+.global-focus .focus-ring {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 25px;
-  align-items: center;
-  padding-top: 28px;
+  place-items: center;
+  border: 1px solid rgba(226,184,103,.36);
+  border-radius: 50%;
+  background: rgba(11,13,12,.56);
+  box-shadow: 0 0 65px rgba(226,184,103,.10);
 }
 
-.world-bottom strong {
-  display: block;
+.global-focus .focus-ring span {
   font-family: var(--serif);
-  font-size: 40px;
-  color: var(--gold-soft);
+  font-size: 38px;
+  color: #e2b867;
 }
 
-.world-bottom span {
+.global-focus strong {
   display: block;
-  color: rgba(255,255,255,.55);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  color: #fff8e9;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
 }
 
-.source-note {
-  margin: 28px 0 0;
-  color: rgba(255,255,255,.35);
-  font-size: 11px;
+.global-focus p {
+  margin: 5px auto 0;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+}
+
+.global-info {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.global-regions,
+.global-stats {
+  border: 1px solid var(--line-dark);
+  background: #171916;
+  padding: 30px;
+}
+
+.global-regions h3,
+.global-stats h3 {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff8e9;
+}
+
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.region-card {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.09);
+  background: #111310;
+  color: rgba(255,255,255,.74);
+  padding: 14px 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.region-card:hover,
+.region-card.active {
+  border-color: rgba(226,184,103,.48);
+  background: rgba(226,184,103,.08);
+  color: #fff8e9;
+  transform: translateY(-2px);
+}
+
+.region-card strong { display: block; font-size: 12px; letter-spacing: .03em; }
+.region-card small { display: block; margin-top: 4px; color: rgba(255,255,255,.42); font-size: 9px; }
+
+.global-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  align-content: start;
+}
+
+.stat-box { padding: 4px 0 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.stat-box:nth-last-child(-n+2) { border-bottom: 0; }
+.stat-box strong { display: block; color: #e2b867; font-family: var(--serif); font-size: 42px; line-height: 1; font-weight: 500; }
+.stat-box span { display: block; margin-top: 8px; color: rgba(255,255,255,.55); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+
+.global-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 18px;
+  padding: 24px 30px;
+  border: 1px solid rgba(226,184,103,.22);
+  background: linear-gradient(90deg, rgba(226,184,103,.08), rgba(255,255,255,.02));
+}
+
+.global-cta p { margin: 0; color: rgba(255,255,255,.58); font-size: 13px; }
+.global-cta strong { display: block; margin-bottom: 4px; color: #fff8e9; font-family: var(--serif); font-size: 24px; font-weight: 500; }
+
+.world-source {
+  margin-top: 16px;
+  color: rgba(255,255,255,.32);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.world-source a { color: rgba(226,184,103,.75); }
+
+@media (max-width: 900px) {
+  .global-info { grid-template-columns: 1fr; }
+  .global-stage { min-height: 470px; }
+}
+
+@media (max-width: 650px) {
+  .global-stage { min-height: 410px; }
+  .global-stage::before { font-size: 58px; }
+  .global-focus { width: 210px; }
+  .global-focus .focus-ring { width: 64px; height: 64px; margin-bottom: 10px; }
+  .global-focus .focus-ring span { font-size: 28px; }
+  .global-focus strong { font-size: 22px; }
+  .node-label { font-size: 7px; }
+  .region-grid { grid-template-columns: repeat(2, 1fr); }
+  .global-regions, .global-stats { padding: 22px; }
+  .global-stats { grid-template-columns: 1fr 1fr; }
+  .global-cta { align-items: flex-start; flex-direction: column; }
 }
 
 /* EVENTS */
@@ -1454,48 +1619,93 @@ h3 {
       </div>
     </section>
 
-    <!-- WORLD -->
-    <section id="world" class="world section section-dark">
+    <!-- WORLD V3 -->
+    <section id="world" class="world world-v3 section section-dark">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">THE WORLD</p>
-          <h2>One vision.<br><em>A global community.</em></h2>
+          <p class="eyebrow">THE GLOBAL COMMUNITY</p>
+          <h2>Many places.<br><em>One intention.</em></h2>
           <p>
-            ShivYog forums bring people together regularly for collective
-            practice, positive community and selfless service. The official
-            Portal remains the place to find and join a forum.
+            ShivYog forums bring people together for collective practice,
+            positive community, meditation, chanting and selfless service.
+            This Community site highlights the living global network while
+            the official Portal remains the place to find and join a forum.
           </p>
         </div>
 
-        <div class="world-map">
-          <div class="map-grid"></div>
-          <div class="map-glow glow-one"></div>
-          <div class="map-glow glow-two"></div>
-          <div class="map-glow glow-three"></div>
-          <div class="map-glow glow-four"></div>
-          <div class="map-glow glow-five"></div>
-          <div class="map-label label-one">INDIA</div>
-          <div class="map-label label-two">EUROPE</div>
-          <div class="map-label label-three">NORTH AMERICA</div>
-          <div class="map-label label-four">AUSTRALIA</div>
-          <div class="map-center">∞</div>
+        <div class="global-stage" aria-label="Illustrated ShivYog global community constellation">
+          <svg class="constellation-lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M190 198 C300 120 375 142 480 150 C560 156 580 210 610 286 C650 320 690 270 700 260 C750 300 790 350 860 405"/>
+            <path d="M480 150 C455 215 455 270 470 286 C490 315 515 310 520 318"/>
+            <path d="M470 286 C420 325 350 360 300 364"/>
+            <path d="M610 286 C670 260 690 250 700 260"/>
+            <path d="M700 260 C760 300 770 350 790 364 C830 400 850 415 860 437"/>
+          </svg>
+
+          <button class="node n-na" data-region="North America" aria-label="North America"></button>
+          <button class="node n-eu" data-region="Europe" aria-label="Europe"></button>
+          <button class="node n-africa" data-region="Africa" aria-label="Africa"></button>
+          <button class="node n-sa" data-region="South America" aria-label="South America"></button>
+          <button class="node n-india active" data-region="India" aria-label="India"></button>
+          <button class="node n-sea" data-region="South East Asia" aria-label="South East Asia"></button>
+          <button class="node n-aus" data-region="Australia" aria-label="Australia"></button>
+          <button class="node n-nz" data-region="New Zealand" aria-label="New Zealand"></button>
+          <button class="node n-kenya" data-region="Kenya" aria-label="Kenya"></button>
+
+          <span class="node-label l-na">NORTH AMERICA</span>
+          <span class="node-label l-eu">EUROPE</span>
+          <span class="node-label l-africa">AFRICA</span>
+          <span class="node-label l-sa">SOUTH AMERICA</span>
+          <span class="node-label l-india">INDIA</span>
+          <span class="node-label l-sea">SOUTH EAST ASIA</span>
+          <span class="node-label l-aus">AUSTRALIA</span>
+          <span class="node-label l-nz">NEW ZEALAND</span>
+          <span class="node-label l-kenya">KENYA</span>
+
+          <div class="global-focus" aria-live="polite">
+            <div class="focus-ring"><span>∞</span></div>
+            <strong id="focusRegion">India</strong>
+            <p>One community, connected by a shared intention.</p>
+          </div>
         </div>
 
-        <div class="world-bottom">
-          <div>
-            <strong>1,750+</strong>
-            <span>Forums worldwide*</span>
+        <div class="global-info">
+          <div class="global-regions">
+            <h3>Forum regions &amp; communities</h3>
+            <div class="region-grid">
+              <button class="region-card active" data-region="India"><strong>India</strong><small>Forum network</small></button>
+              <button class="region-card" data-region="North America"><strong>North America</strong><small>Forum network</small></button>
+              <button class="region-card" data-region="Europe"><strong>Europe</strong><small>Forum network</small></button>
+              <button class="region-card" data-region="South Africa"><strong>South Africa</strong><small>Community presence</small></button>
+              <button class="region-card" data-region="Kenya"><strong>Kenya</strong><small>Forum / event presence</small></button>
+              <button class="region-card" data-region="South East Asia"><strong>South East Asia</strong><small>Forum / event region</small></button>
+              <button class="region-card" data-region="Australia"><strong>Australia</strong><small>Forum / event region</small></button>
+              <button class="region-card" data-region="New Zealand"><strong>New Zealand</strong><small>Auckland forum example</small></button>
+              <button class="region-card" data-region="Africa"><strong>Africa</strong><small>Forum / event region</small></button>
+            </div>
           </div>
-          <div>
-            <strong>20,000+</strong>
-            <span>Regular forum participants*</span>
+
+          <div class="global-stats">
+            <h3 style="grid-column:1/-1">The scale of the network</h3>
+            <div class="stat-box"><strong>1,750+</strong><span>Forums worldwide</span></div>
+            <div class="stat-box"><strong>20,000+</strong><span>Regular participants</span></div>
+            <div class="stat-box"><strong>Weekly</strong><span>Collective practice</span></div>
+            <div class="stat-box"><strong>Sewa</strong><span>Service in action</span></div>
           </div>
-          <a class="button button-light" href="https://www.shivyogportal.com/forums" target="_blank" rel="noopener">
-            Explore Official Forum Directory <span>↗</span>
-          </a>
         </div>
 
-        <p class="source-note">*Figures displayed here are based on information currently published by the official ShivYog Portal and should be updated whenever the official source changes.</p>
+        <div class="global-cta">
+          <div>
+            <strong>Find a ShivYog Forum</strong>
+            <p>Use the official directory for the current forum list, locations and participation details.</p>
+          </div>
+          <a class="button button-light" href="https://www.shivyogportal.com/forums" target="_blank" rel="noopener">Explore Official Directory <span>↗</span></a>
+        </div>
+
+        <p class="world-source">
+          Forum scale and regional references are based on publicly listed information from the official ShivYog Portal.
+          Counts and locations can change; the official directory should be treated as the current source of truth.
+        </p>
       </div>
     </section>
 
@@ -1669,7 +1879,7 @@ h3 {
     toggle?.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('nav-open', !open);
+      nav?.classList.toggle('nav-open', !open);
     });
 
     document.querySelectorAll('.main-nav a').forEach(link => {
@@ -1679,7 +1889,7 @@ h3 {
       });
     });
 
-    document.addEventListener('click', (event) => {
+    document.addEventListener('click', event => {
       if (!toggle || !nav) return;
       if (!nav.contains(event.target) && !toggle.contains(event.target)) {
         toggle.setAttribute('aria-expanded', 'false');
@@ -1687,12 +1897,27 @@ h3 {
       }
     });
 
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && toggle && nav) {
         toggle.setAttribute('aria-expanded', 'false');
         nav.classList.remove('nav-open');
       }
     });
+
+    // Global community constellation interaction
+    const focusRegion = document.getElementById('focusRegion');
+    const nodes = [...document.querySelectorAll('.node')];
+    const regionCards = [...document.querySelectorAll('.region-card')];
+
+    function selectRegion(name) {
+      if (!focusRegion) return;
+      focusRegion.textContent = name;
+      nodes.forEach(node => node.classList.toggle('active', node.dataset.region === name));
+      regionCards.forEach(card => card.classList.toggle('active', card.dataset.region === name));
+    }
+
+    nodes.forEach(node => node.addEventListener('click', () => selectRegion(node.dataset.region)));
+    regionCards.forEach(card => card.addEventListener('click', () => selectRegion(card.dataset.region)));
   </script>
 
 </body>
